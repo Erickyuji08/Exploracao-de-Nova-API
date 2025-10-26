@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Busca de Filmes (TMDB)</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <!-- CONTAINER PRINCIPAL -->
+  <div class="container">
+
+    <!-- CABEÇALHO COM TEXTO EXPLICATIVO -->
+    <header>
+      <h1>Projeto: Busca de Filmes (API The Movie DB)</h1>
+      <p>
+        Este exemplo mostra como conectar uma página HTML com uma API real da internet.  
+        Vamos buscar filmes, séries, atores e mais usando a API gratuita do The Movie DB (TMDb).
+      </p>
+    </header>
+
+    <hr>
+
+    <!-- ÁREA DE PESQUISA -->
+    <section id="container-pesquisa">
+      <h2>Etapa 1 — Fazer a busca</h2>
+      <p>Digite o nome de um filme, série ou ator e clique no botão <strong>Buscar</strong>.</p>
+
+      <div class="barra-pesquisa">
+        <select id="select-tipo-busca" onchange="mudarTipoBusca(this.value)">
+          <option value="filme">Filmes/Séries</option>
+          <option value="ator">Atores</option>
+        </select>
+        <input id="campo-busca" type="text" placeholder="Ex.: Batman, Matrix, Avatar..." />
+        <button id="botao-buscar" onclick="buscarFilmes()">Buscar</button>
+      </div>
+
+      <p id="mensagem-status" class="status"></p>
+    </section>
+
+    <hr>
+
+    <!-- RESULTADOS -->
+    <section id="container-resultados">
+      <div id="detalhes-filme-container"></div>
+      <h2>Etapa 2 — Resultados da busca</h2>
+      <p>Abaixo aparecerão os pôsteres e nomes dos filmes retornados pela API:</p>
+      <div id="lista-resultados" class="grade"></div>
+    </section>
+
+    <hr>
+
+    <!-- PAGINAÇÃO -->
+    <section id="container-paginacao">
+      <h2> Etapa 3 — Navegar entre páginas</h2>
+      <p>Use os botões para ver mais resultados.</p>
+      <div class="filtros-avancados" id="filtros-avancados">
+        <h3>Filtros Avançados (Filmes/Séries)</h3>
+        <div class="barra-filtros">
+          <input id="filtro-ano" type="number" placeholder="Ano (Ex: 2023)" min="1900" max="2100" />
+          <select id="filtro-genero"><option value="">Todos os Gêneros</option></select>
+          <select id="filtro-idioma"><option value="">Todos os Idiomas</option></select>
+          <button onclick="buscarFilmesComFiltro()">Aplicar Filtros</button>
+        </div>
+      </div>
+      <div class="paginacao">
+        <button id="botao-anterior" onclick="paginaAnterior()">◀ Anterior</button>
+        <button id="botao-proximo" onclick="proximaPagina()">Próxima ▶</button>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- RODAPÉ EXPLICATIVO -->
+    <footer>
+      <p>
+            Aula Senac - Turma A
+      </p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>\n </body>
+</html>
