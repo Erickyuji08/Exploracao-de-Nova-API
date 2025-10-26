@@ -1,6 +1,5 @@
 // ===== CONFIGURAÇÃO INICIAL (TMDB) =====
-// Pegue sua chave gratuita em: https://www.themoviedb.org/settings/api
-const CHAVE_API = "2055690676f8bbd715193cb9ef233dbf"; // Substitua por sua chave
+const CHAVE_API = "2055690676f8bbd715193cb9ef233dbf"; 
 const URL_BASE = "https://api.themoviedb.org/3/";
 
 // ===== CONEXÃO COM O HTML =====
@@ -9,9 +8,9 @@ const listaResultados = document.getElementById("lista-resultados");
 const mensagemStatus = document.getElementById("mensagem-status");
 
 // ===== VARIÁVEIS DE CONTROLE =====
-let termoBusca = "";      // Texto digitado pelo usuário
-let paginaAtual = 1;      // Página de resultados
-let totalPaginas = 1;     // Total de páginas retornado pela API
+let termoBusca = "";      
+let paginaAtual = 1;      
+let totalPaginas = 1;   
 
 // ===== CONEXÃO COM O HTML (NOVOS ELEMENTOS) =====
 const selectTipoBusca = document.getElementById("select-tipo-busca");
